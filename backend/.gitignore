@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Generated financial artifacts and test output
+receipts/
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log

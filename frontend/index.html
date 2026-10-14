@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VaultPay | Nexus Corporate Services</title><link rel="stylesheet" href="styles.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <main class="shell">
+    <header><div><p class="eyebrow">NEXUS CORPORATE SERVICES</p><h1>VaultPay</h1></div><button id="logout" class="quiet hidden">Sign out</button></header>
+    <section id="connection" class="card connection"><h2>Connect portal</h2><p>Use the local API address and a Stripe publishable test key. Private payment keys are never entered here.</p><div class="grid"><label>API address<input id="api-url" value="http://localhost:3000/api"></label><label>Stripe publishable key<input id="stripe-key" placeholder="pk_test_..."></label></div><button id="save-settings">Save settings</button></section>
+    <section id="login-card" class="card login"><p class="eyebrow">SECURE PORTAL</p><h2>Sign in</h2><form id="login-form"><label>Email<input id="email" type="email" required autocomplete="email"></label><label>Password<input id="password" type="password" required autocomplete="current-password"></label><button>Sign in securely</button></form><p id="login-error" class="error" role="alert"></p></section>
+    <section id="portal" class="hidden"><div class="welcome"><div><p class="eyebrow" id="role-label"></p><h2 id="name"></h2></div><button id="refresh" class="quiet">Refresh invoices</button></div>
+      <section id="admin-tools" class="card hidden"><h2>Create invoice</h2><form id="invoice-form" class="grid"><label>Client<select id="client-id" required></select></label><label>Invoice number<input id="invoice-number" required placeholder="NEX-2026-0002"></label><label>Amount (USD)<input id="amount" type="number" min="5000" max="50000" step="0.01" required></label><label>Description<input id="description" required></label><button>Create invoice</button></form><p id="invoice-message" class="message"></p></section>
+      <section class="card"><div class="section-title"><h2>Invoices</h2><span id="invoice-count"></span></div><div id="invoices" class="invoices"></div></section>
+    </section>
+  </main>
+  <dialog id="payment-dialog"><form method="dialog" class="payment"><button class="close" value="cancel">×</button><p class="eyebrow">SECURE STRIPE PAYMENT</p><h2 id="payment-title">Pay invoice</h2><p id="payment-total"></p><div id="card-element"></div><p id="payment-error" class="error"></p><button id="pay-button" type="button">Pay securely</button></form></dialog>
+  <script src="app.js"></script>
+</body></html>

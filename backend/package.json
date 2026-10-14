@@ -1,0 +1,24 @@
+{
+  "name": "vaultpay-financial-core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure role-based invoice and Stripe payment API for Nexus Corporate Services.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test",
+    "seed": "node scripts/seed.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.16",
+    "pdfkit": "^0.16.0",
+    "stripe": "^17.5.0"
+  },
+  "devDependencies": { "nodemon": "^3.1.9", "supertest": "^7.0.0" }
+}
